@@ -1,0 +1,11 @@
+{
+	"pre-commit": [
+		"which bash"
+	],
+	"commit-msg": [
+		"exit 1"
+	],
+	"pre-push": [
+		"./errorexit.sh"
+	]
+}
