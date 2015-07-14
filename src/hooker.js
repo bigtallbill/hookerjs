@@ -48,8 +48,6 @@ Hooker.prototype.execHook = function(hookType) {
     var result = exec(cmd);
     if (result.status !== 0) {
       return result;
-    } else {
-      console.log('res', result);
     }
   }
 
@@ -81,7 +79,7 @@ Hooker.prototype.getHookDir = function() {
 Hooker.prototype.getHookTemplate = function(hookType, withShebang) {
 
   var template = '### HOOKERSTART ###\n' +
-      'hookerjs exec ' + hookType + '\n' +
+      this.nodeInstallpath + ' ' + this.hookerPath + ' exec ' + hookType + '\n' +
       '### HOOKEREND ###\n\n';
   if (withShebang) {
     template = '#!/bin/bash\n' + template;
