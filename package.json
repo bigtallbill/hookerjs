@@ -1,5 +1,5 @@
 {
-  "name": "bigtallbill/hooker",
+  "name": "@bigtallbill/hooker",
   "version": "0.0.1",
   "description": "A commit hook manager",
   "preferGlobal": true,
