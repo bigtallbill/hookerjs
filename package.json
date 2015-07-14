@@ -10,7 +10,7 @@
     "test": "gulp",
     "start": "gulp && gulp watch"
   },
-  "author": "",
+  "author": "bigtallbill@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.0",
