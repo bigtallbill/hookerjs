@@ -15,6 +15,11 @@ if (argv._.length > 0) {
   }
 
   if (argv._[0] === 'exec') {
-    hooker.execHook(argv._[1]);
+    var output = hooker.execHook(argv._[1]);
+
+    if (output !== true) {
+      process.stderr.write(output.stderr);
+      process.exit(output.status);
+    }
   }
 }
