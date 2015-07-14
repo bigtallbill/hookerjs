@@ -1,9 +1,11 @@
 var fs = require('fs-extra');
 var exec = require('sync-exec');
 
-var Hooker = function(baseDir) {
+var Hooker = function(baseDir, hookerInstallPath, nodePath) {
   this.baseDir = baseDir;
   this.config = this.loadConfig();
+  this.nodeInstallpath = nodePath;
+  this.hookerPath = hookerInstallPath;
 };
 
 

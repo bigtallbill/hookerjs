@@ -25,7 +25,7 @@ describe('hooker', function() {
   });
 
   beforeEach(function() {
-    hooker = new Hooker(assetsRoot);
+    hooker = new Hooker(assetsRoot, 'hookerjs', 'node');
   });
 
   describe('installHook()', function() {
@@ -55,7 +55,7 @@ describe('hooker', function() {
     });
 
     it('should append hooker if other commands exist', function() {
-      hooker = new Hooker(assetsRoot + '/existing-hook');
+      hooker = new Hooker(assetsRoot + '/existing-hook', 'hookerjs', 'node');
       hooker.installHook('pre-commit');
       dirExistsSync(hooker.getHookDir() + '/pre-commit').should.be.true();
 
@@ -129,8 +129,6 @@ describe('hooker', function() {
 
       output.status.should.equal(1);
       output.stderr.should.equal('poop\n');
-
-      console.log(output);
     });
   });
 
