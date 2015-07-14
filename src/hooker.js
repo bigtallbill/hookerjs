@@ -12,6 +12,7 @@ var Hooker = function(baseDir, hookerInstallPath, nodePath) {
 Hooker.prototype.installHook = function(hookType) {
   var hookTypepath = this.getHookTypePath(hookType);
   fs.ensureFileSync(hookTypepath);
+  fs.chmodSync(hookTypepath, '777');
   var contents = fs.readFileSync(hookTypepath, {encoding: 'utf-8'});
 
   if (contents.length === 0) {
